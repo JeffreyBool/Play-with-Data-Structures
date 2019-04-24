@@ -9,7 +9,7 @@ package stack_test
 
 import (
 	"testing"
-	"Play-with-Data-Structures/03-stacks-and-queue"
+	"Play-with-Data-Structures/03-stacks-and-queue/stack"
 )
 
 //实例化
