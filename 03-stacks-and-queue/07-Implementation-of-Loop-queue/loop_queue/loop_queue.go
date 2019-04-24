@@ -118,4 +118,5 @@ func (queue *LoopQueue) resize(newCapacity int) {
 	queue.data = newData
 	queue.front = 0
 	queue.tail = queue.size
+	newData = nil
 }
