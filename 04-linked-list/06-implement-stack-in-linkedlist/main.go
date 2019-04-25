@@ -18,7 +18,7 @@ import (
 )
 
 func main()  {
-	opCount := 10000000
+	opCount := 1000000
 	wg := sync.WaitGroup{}
 	wg.Add(2)
 	arrayStack := array_stack.NewStack()
@@ -34,7 +34,7 @@ func main()  {
 		time2 := testStack(linkedListStack,opCount)
 		fmt.Println("LinkedList, time: ", time2, " s")
 	}()
-
+	// 其实这个时间比较很复杂，因为 LinkedListStack 中包含更多的 new 操作
 	wg.Wait()
 }
 
