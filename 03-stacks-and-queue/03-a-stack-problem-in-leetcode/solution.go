@@ -8,8 +8,8 @@
 package main
 
 import (
-	"Play-with-Data-Structures/03-stacks-and-queue"
 	"fmt"
+	"Play-with-Data-Structures/03-stacks-and-queue/stack"
 )
 
 //有效括号检查 https://leetcode-cn.com/problems/valid-parentheses/
