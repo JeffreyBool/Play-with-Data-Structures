@@ -27,13 +27,13 @@ func newNode(v interface{}, next ...*node) (n *node) {
 }
 
 type LinkedList struct {
-	head *node
+	dummyHead *node
 	size int
 }
 
 //实例化
 func NewLinkedList() *LinkedList {
-	return &LinkedList{}
+	return &LinkedList{dummyHead:newNode(nil)}
 }
 
 //获取链表元素长度
@@ -54,30 +54,22 @@ func (linked *LinkedList) Add(index int,v interface{}) (err error) {
 		return
 	}
 
-	if index == 0{
-		linked.AddFirst(v)
-	}else{
-		prev := linked.head
-		for i:= 0; i < index - 1; i++{
-			prev = prev.next
-		}
-		prev.next = newNode(v,prev.next)
-		linked.size ++
-		//node := newNode(v)
-		//node.next = prev.next
-		//prev.next = node
+	prev := linked.dummyHead
+	for i:= 0; i < index; i++{
+		prev = prev.next
 	}
+
+	prev.next = newNode(v,prev.next)
+	linked.size ++
+	//node := newNode(v)
+	//node.next = prev.next
+	//prev.next = node
 	return
 }
 
 //在链表头部插入元素
 func (linked *LinkedList) AddFirst(v interface{}) error {
-	//node := newNode(v)
-	//node.next = linked.head
-	//linked.head = node
-	linked.head = newNode(v,linked.head)
-	linked.size ++
-	return nil
+	return linked.Add(0,v)
 }
 
 //在链表末尾添加元素
