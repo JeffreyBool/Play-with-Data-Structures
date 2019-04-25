@@ -12,6 +12,11 @@ import (
 	"Play-with-Data-Structures/04-linked-list/06-implement-stack-in-linkedlist/linkedlist_stack"
 )
 
+// https://leetcode.com/problems/valid-parentheses/description/
+// 括号匹配问题
+//
+// 使用LinkedListStack测试20号问题的代码在视频中没有提及
+// 该代码主要用于使用Leetcode上的问题测试我们的LinkedListStack：）
 var brackets = map[rune]rune{
 	')': '(',
 	']': '[',
